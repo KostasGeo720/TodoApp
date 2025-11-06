@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Create New Profile - TodoApp{% endblock %}
+
+{% block content %}
+        <div class="form-container">
+            <h1>Create Your Profile</h1>
+            <p class="subtitle">Join our todo community and start organizing your tasks</p>
+            
+            <form method="POST" class="profile-form">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="field-errors">
+                        {% for error in field.errors %}
+                        <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="submit-btn">Create Profile</button>
+            </form>
+        </div>
+{% endblock %}
