@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - TodoApp{% endblock %}
+
+{% block content %}
+<section class="home-hero" style="padding:3.5rem 0; text-align:center;">
+	<div class="hero-inner">
+		<h1 style="font-size:2rem; margin-bottom:0.5rem;">Welcome to TodoApp</h1>
+		<p class="lead" style="color:var(--text-secondary); max-width:700px; margin:0.25rem auto 1rem;">A simple, beautiful place to manage your tasks and stay focused. This is a placeholder home page — replace this content as your app grows.</p>
+		<p>
+			<a href="{% url 'new_profile' %}" class="submit-btn" style="display:inline-block;">Get started</a>
+		</p>
+	</div>
+</section>
+
+<div class="container" style="padding:2rem 1rem; max-width:1100px;">
+	<section class="features" style="background:var(--surface-color); border-radius:10px; padding:1.5rem; box-shadow:0 6px 20px rgba(0,0,0,0.04);">
+		<h2 style="margin-bottom:0.5rem;">What's here</h2>
+		<p style="color:var(--text-secondary);">- Account creation and profile setup (already wired to a registration form).<br>- Todo lists and items (coming soon).<br>- Use this page to link to key areas of your app.</p>
+		<hr style="margin:1rem 0;">
+		<p style="color:var(--text-secondary);">Replace this with real content, components, or a dashboard when you're ready.</p>
+	</section>
+</div>
+
+{% endblock %}
+
